@@ -9,7 +9,7 @@ use Spatie\Permission\Models\Role;
 
 return [
     'admin' => [
-        'access_panel admin',
+        'access_panel delivery',
         ...ModelPermission::make(User::class)->viewAny()->view()->create()->update()->delete()->toArray(),
         ...ModelPermission::make(Role::class)->all()->toArray(),
         ...ModelPermission::make(Permission::class)->all()->toArray(),
@@ -17,7 +17,7 @@ return [
         ...ModelPermission::make(Work::class)->all()->toArray(),
     ],
     'carrier' => [
-        'access_panel admin',
+        'access_panel delivery',
         ...ModelPermission::make(Work::class)->viewAny()->update()->toArray(),
     ]
 ];
